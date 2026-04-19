@@ -198,7 +198,8 @@ function bemVindo() {
                         <a href="https://www.instagram.com/gusta0wz/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <!-- Substitua SEU_ID_FORMSPREE pelo seu ID em https://formspree.io -->
+
+                <!-- FORMULÁRIO COM FORMSPREE -->
                 <form class="contato-form" id="formContato" action="https://formspree.io/f/xbdqkjog" method="POST">
                     <div class="form-group">
                         <input type="text" name="nome" placeholder="Seu nome" id="nome" required>
@@ -212,9 +213,10 @@ function bemVindo() {
                     <div class="form-group">
                         <textarea name="mensagem" placeholder="Sua mensagem" id="mensagem" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                    <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar Mensagem</button>
                     <div id="mensagemStatus"></div>
                 </form>
+
             </div>
         </div>
     </section>
