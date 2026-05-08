@@ -108,7 +108,7 @@ section {
 
 .btn-secondary:hover {
     background-color: #7b2cbf;
-    color: white;
+    color: red;
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(123, 44, 191, 0.2);
 }
