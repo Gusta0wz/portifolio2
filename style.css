@@ -662,6 +662,8 @@ section {
 }
 
 /* ===== RESPONSIVIDADE ===== */
+
+/* --- 992px: layouts flex viram coluna --- */
 @media (max-width: 992px) {
     .hero .container,
     .sobre-content,
@@ -682,7 +684,23 @@ section {
     }
 }
 
+/* --- 768px: menu mobile, grids e ajustes gerais --- */
 @media (max-width: 768px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    /* Header / Nav */
     .hamburger {
         display: block;
     }
@@ -721,21 +739,90 @@ section {
         padding: 15px;
     }
 
-    .sobre-info,
-    .sobre-stats {
+    /* Hero */
+    .hero .container,
+    .sobre-content,
+    .contato-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-content,
+    .hero-image,
+    .sobre-texto,
+    .sobre-stats,
+    .contato-info,
+    .contato-form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.3;
+    }
+
+    .hero-role {
+        font-size: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
+
+    /* Code snippet */
+    .code-snippet {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .code-snippet code {
+        font-size: 0.85rem;
+    }
+
+    /* Sobre - info vira 1 coluna, stats mantém 2x2 */
+    .sobre-info {
         grid-template-columns: 1fr;
     }
 
+    /*
+     * FIX: .sobre-stats mantém repeat(2, 1fr) no mobile.
+     * O código original forçava grid-template-columns: 1fr aqui,
+     * fazendo os 4 stat-cards ocuparem 100% da largura em coluna
+     * única — resultado visual desproporcional e "esticado".
+     * Manter 2x2 preserva a grade original sem afetar o desktop.
+     */
+    .sobre-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Projetos e habilidades ficam bem em 1 coluna:
+       são cards largos com conteúdo horizontal (barras, tags) */
     .projetos-grid,
     .habilidades-grid {
         grid-template-columns: 1fr;
     }
 
-    section {
-        padding: 60px 0;
+    .section-title {
+        font-size: 2rem;
     }
 }
 
+/* --- 576px: botões empilhados e ajustes menores --- */
 @media (max-width: 576px) {
     .hero-buttons {
         flex-direction: column;
@@ -766,9 +853,14 @@ section {
     }
 }
 
+/* --- 480px: ajustes finos de fonte e padding --- */
 @media (max-width: 480px) {
     .hero {
         padding-top: 100px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
     }
 
     .hero-description {
@@ -776,111 +868,12 @@ section {
     }
 
     .section-title {
+        font-size: 1.6rem;
         margin-bottom: 35px;
     }
 
-    .projeto-info,
-    .skill-category,
-    .stat-card {
-        padding: 20px;
-    }
-}
-
-/* ===== CORREÇÃO FINAL RESPONSIVA ===== */
-
-@media screen and (max-width: 768px) {
-
-    html,
-    body {
-        overflow-x: hidden;
-    }
-
-    .container {
-        width: 100%;
-        padding: 0 16px !important;
-    }
-
-    .hero .container,
-    .sobre-content,
-    .contato-content {
-        flex-direction: column !important;
-        align-items: center;
-        text-align: center;
-    }
-
-    .hero-content,
-    .hero-image,
-    .sobre-texto,
-    .sobre-stats,
-    .contato-info,
-    .contato-form {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    .hero-title {
-        font-size: 2.2rem !important;
-        line-height: 1.3 !important;
-    }
-
-    .hero-role {
-        font-size: 1.2rem !important;
-    }
-
-    .hero-description {
-        font-size: 1rem !important;
-    }
-
-    .hero-buttons {
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100%;
-    }
-
-    .btn {
-        width: 100%;
-        max-width: 320px;
-        text-align: center;
-    }
-
-    .projetos-grid,
-    .habilidades-grid,
-    .sobre-stats,
-    .sobre-info {
-        grid-template-columns: 1fr !important;
-    }
-
-    .code-snippet {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: auto;
-    }
-
-    .code-snippet code {
-        font-size: 0.85rem;
-    }
-
-    .section-title {
-        font-size: 2rem !important;
-    }
-
-    .nav-menu {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-
-    .hero-title {
-        font-size: 1.8rem !important;
-    }
-
-    .section-title {
-        font-size: 1.6rem !important;
-    }
-
     .logo {
-        font-size: 1.3rem !important;
+        font-size: 1.3rem;
     }
 
     .btn {
@@ -889,13 +882,21 @@ section {
     }
 
     .code-snippet {
-        padding: 14px !important;
+        padding: 14px;
     }
 
     .projeto-info,
     .skill-category,
     .stat-card,
     .contato-form {
-        padding: 18px !important;
+        padding: 18px;
+    }
+
+    /*
+     * FIX: reduz fonte dos números nos stat-cards em telas
+     * muito estreitas para evitar corte de texto, mantendo o layout 2x2.
+     */
+    .stat-number {
+        font-size: 2rem;
     }
 }
