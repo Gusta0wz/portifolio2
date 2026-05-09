@@ -774,6 +774,7 @@ section {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         width: 100%;
     }
 
@@ -781,6 +782,7 @@ section {
         width: 100%;
         max-width: 320px;
         text-align: center;
+        margin: 0 auto;
     }
 
     /* Code snippet */
@@ -815,6 +817,15 @@ section {
     .projetos-grid,
     .habilidades-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Centraliza conteúdo interno dos cards de projeto no mobile */
+    .projeto-info {
+        text-align: center;
+    }
+
+    .projeto-tags {
+        justify-content: center;
     }
 
     .section-title {
