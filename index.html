@@ -3,15 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - Gustavo da Costa Barbosa</title>
+    <title>Gustavo da Costa Barbosa | Desenvolvedor Full Stack</title>
+
+    <!-- Meta Tags para SEO -->
+    <meta name="description" content="Portfólio de Gustavo da Costa Barbosa - Desenvolvedor Full Stack especializado em HTML, CSS, JavaScript, Node.js e Python. Conheça meus projetos e habilidades.">
+    <meta name="keywords" content="Desenvolvedor Full Stack, Gustavo da Costa Barbosa, Front-end, Back-end, JavaScript, Node.js, Python, Portfólio Web">
+    <meta name="author" content="Gustavo da Costa Barbosa">
+
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gustavo da Costa Barbosa | Desenvolvedor Full Stack">
+    <meta property="og:description" content="Transformo ideias em experiências web interativas, modernas e responsivas.">
+    <meta property="og:url" content="https://github.com/Gusta0wz">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">&lt;Dev<span>Portfolio</span>/&gt;</a>
+            <nav class="navbar" aria-label="Navegação Principal">
+                <a href="#home" class="logo">&lt;Dev<span>Portfolio</span>/&gt;</a>
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link">Início</a></li>
                     <li><a href="#sobre" class="nav-link">Sobre</a></li>
@@ -19,7 +34,7 @@
                     <li><a href="#projetos" class="nav-link">Projetos</a></li>
                     <li><a href="#contato" class="nav-link">Contato</a></li>
                 </ul>
-                <div class="hamburger">
+                <div class="hamburger" role="button" aria-label="Abrir menu de navegação" aria-expanded="false" tabindex="0">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -105,18 +120,18 @@ function bemVindo() {
                         <div class="skill-bar"><div class="skill-progress" data-width="95"></div></div>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-info"><span>CSS3</span><span>90%</span></div>
+                        <div class="skill-info"><span>CSS3 / Responsividade</span><span>90%</span></div>
                         <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-info"><span>JavaScript</span><span>85%</span></div>
+                        <div class="skill-info"><span>JavaScript (ES6+)</span><span>85%</span></div>
                         <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-server"></i> Back-end</h3>
                     <div class="skill-item">
-                        <div class="skill-info"><span>Node.js</span><span>75%</span></div>
+                        <div class="skill-info"><span>Node.js / Express</span><span>75%</span></div>
                         <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
                     </div>
                     <div class="skill-item">
@@ -124,7 +139,7 @@ function bemVindo() {
                         <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-info"><span>Banco de Dados</span><span>80%</span></div>
+                        <div class="skill-info"><span>Banco de Dados (SQL)</span><span>80%</span></div>
                         <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
                     </div>
                 </div>
@@ -135,7 +150,7 @@ function bemVindo() {
                         <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-info"><span>Figma</span><span>75%</span></div>
+                        <div class="skill-info"><span>Figma (UI/UX)</span><span>75%</span></div>
                         <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
                     </div>
                     <div class="skill-item">
@@ -146,33 +161,60 @@ function bemVindo() {
             </div>
         </div>
     </section>
-
+    
     <section id="projetos" class="projetos">
         <div class="container">
             <h2 class="section-title">Meus <span>Projetos</span></h2>
             <div class="projetos-grid">
+                <!-- Projeto 1: Portfólio Pessoal -->
                 <div class="projeto-card">
                     <div class="projeto-imagem">
                         <div class="projeto-placeholder"><i class="fas fa-laptop-code"></i></div>
                     </div>
                     <div class="projeto-info">
                         <h3>Portfólio Pessoal</h3>
-                        <p>Desenvolvido com HTML, CSS e JavaScript puro, com design responsivo e animações suaves.</p>
+                        <p>Desenvolvido com HTML, CSS e JavaScript puro, com design responsivo, animações dinâmicas e suporte a tema escuro.</p>
                         <div class="projeto-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
                             <span class="tag">JavaScript</span>
                             <span class="tag">Responsivo</span>
                         </div>
-                        <a href="https://github.com/Gusta0wz" class="btn btn-secondary" target="_blank">Ver no GitHub</a>
+                        <div class="projeto-links">
+                            <a href="https://github.com/Gusta0wz" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> Ver no GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 2: Botanic Site -->
+                <div class="projeto-card">
+                    <div class="projeto-imagem botanic-bg">
+                        <div class="projeto-placeholder"><i class="fas fa-seedling"></i></div>
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Botanic Site</h3>
+                        <p>Website moderno dedicado ao universo botânico, com catálogo de espécies, dicas de cultivo sustentável e layout elegante e fluido.</p>
+                        <div class="projeto-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">UI/UX</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://gusta0wz.github.io/BotanicSite/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i> Acessar Site
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="github-link">
-                <a href="https://github.com/Gusta0wz" class="btn btn-primary btn-github" target="_blank">
+                <a href="https://github.com/Gusta0wz" class="btn btn-primary btn-github" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-github"></i> Ver mais projetos no GitHub
                 </a>
-                <p>Em breve mais projetos serão adicionados!</p>
+                <p>Novos projetos sendo desenvolvidos continuamente!</p>
             </div>
         </div>
     </section>
@@ -183,38 +225,50 @@ function bemVindo() {
             <div class="contato-content">
                 <div class="contato-info">
                     <h3>Vamos conversar!</h3>
-                    <p>Estou sempre aberto a discutir novos projetos, oportunidades de trabalho ou parcerias.</p>
+                    <p>Estou sempre aberto a discutir novos projetos, oportunidades de trabalho ou parcerias de desenvolvimento.</p>
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
-                        <div><h4>Email</h4><p>barbosagusta942@gmail.com</p></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:gusta.dev134@gmail.com" class="contato-email-link">gusta.dev134@gmail.com</a></p>
+                        </div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <div><h4>Localização</h4><p>São Paulo, SP - Brasil</p></div>
+                        <div>
+                            <h4>Localização</h4>
+                            <p>São Paulo, SP - Brasil</p>
+                        </div>
                     </div>
                     <div class="social-links">
-                        <a href="https://github.com/Gusta0wz" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/gustavo-da-costa-barbosa-66951a357" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/gusta0wz/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/Gusta0wz" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Perfil do GitHub de Gustavo">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/gustavo-da-costa-barbosa-66951a357" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Perfil do LinkedIn de Gustavo">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/devgusta7/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Perfil do Instagram de Gustavo">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- FORMULÁRIO COM FORMSPREE -->
                 <form class="contato-form" id="formContato" action="https://formspree.io/f/xbdqkjog" method="POST">
                     <div class="form-group">
-                        <input type="text" name="nome" placeholder="Seu nome" id="nome" required>
+                        <input type="text" name="nome" placeholder="Seu nome" id="nome" aria-label="Seu nome" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Seu email" id="email" required>
+                        <input type="email" name="email" placeholder="Seu email" id="email" aria-label="Seu email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="assunto" placeholder="Assunto" id="assunto" required>
+                        <input type="text" name="assunto" placeholder="Assunto" id="assunto" aria-label="Assunto da mensagem" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="mensagem" placeholder="Sua mensagem" id="mensagem" rows="5" required></textarea>
+                        <textarea name="mensagem" placeholder="Sua mensagem" id="mensagem" aria-label="Sua mensagem" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar Mensagem</button>
-                    <div id="mensagemStatus"></div>
+                    <div id="mensagemStatus" role="alert" aria-live="polite"></div>
                 </form>
 
             </div>
@@ -224,13 +278,13 @@ function bemVindo() {
     <footer class="footer">
         <div class="container">
             <p>&copy; <span id="anoAtual"></span> Gustavo da Costa Barbosa. Todos os direitos reservados.</p>
-            <p>Desenvolvido com <i class="fas fa-heart"></i> usando HTML, CSS e JavaScript</p>
+            <p>Desenvolvido com <i class="fas fa-heart footer-heart"></i> usando HTML, CSS e JavaScript</p>
             <div class="footer-links">
-                <a href="https://github.com/Gusta0wz" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://www.linkedin.com/in/gustavo-da-costa-barbosa-66951a357" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://www.instagram.com/gusta0wz/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://github.com/Gusta0wz" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/gustavo-da-costa-barbosa-66951a357" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.instagram.com/devgusta7/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
             </div>
-            <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+            <a href="#home" class="back-to-top" aria-label="Voltar ao topo da página"><i class="fas fa-arrow-up"></i></a>
         </div>
     </footer>
 
