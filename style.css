@@ -7,6 +7,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 85px;
     color-scheme: light dark;
 }
 
@@ -322,6 +323,11 @@ section {
     color: #1976d2;
 }
 
+.code-snippet .comment {
+    color: #6a9955;
+    font-style: italic;
+}
+
 /* ===== SOBRE ===== */
 .sobre {
     background-color: var(--bg-secondary);
@@ -432,6 +438,7 @@ section {
 
 .skill-category:hover {
     transform: translateY(-5px);
+    border-color: #7b2cbf;
 }
 
 .skill-category h3 {
@@ -456,6 +463,7 @@ section {
     justify-content: space-between;
     margin-bottom: 8px;
     color: var(--text-primary);
+    font-weight: 500;
 }
 
 .skill-bar {
@@ -470,10 +478,11 @@ section {
     background: linear-gradient(90deg, #7b2cbf 0%, #9d4edd 100%);
     border-radius: 4px;
     width: 0;
-    transition: width 1.5s ease;
+    transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* ===== PROJETOS ===== */
+
 .projetos {
     background-color: var(--bg-secondary);
 }
@@ -504,6 +513,14 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.botanic-bg {
+    background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 50%, #40916c 100%);
+}
+
+.botanic-bg .projeto-placeholder {
+    color: #74c69d;
 }
 
 .projeto-placeholder {
@@ -580,6 +597,16 @@ section {
     margin-bottom: 30px;
 }
 
+.contato-email-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contato-email-link:hover {
+    color: #7b2cbf;
+}
+
 .contato-form {
     background-color: var(--card-bg);
     padding: 30px;
@@ -613,6 +640,44 @@ section {
 .form-group textarea {
     resize: vertical;
     font-family: inherit;
+}
+
+#mensagemStatus {
+    display: none;
+    margin-top: 15px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#mensagemStatus.success {
+    display: block;
+    background-color: rgba(46, 125, 50, 0.15);
+    color: #2e7d32;
+    border: 1px solid rgba(46, 125, 50, 0.3);
+}
+
+#mensagemStatus.error {
+    display: block;
+    background-color: rgba(211, 47, 47, 0.15);
+    color: #d32f2f;
+    border: 1px solid rgba(211, 47, 47, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+    #mensagemStatus.success {
+        color: #81c784;
+        background-color: rgba(76, 175, 80, 0.2);
+        border-color: rgba(76, 175, 80, 0.4);
+    }
+    #mensagemStatus.error {
+        color: #e57373;
+        background-color: rgba(244, 67, 54, 0.2);
+        border-color: rgba(244, 67, 54, 0.4);
+    }
 }
 
 /* ===== REDES SOCIAIS ===== */
@@ -655,6 +720,11 @@ section {
     margin-bottom: 10px;
 }
 
+.footer-heart {
+    color: #e74c3c;
+    margin: 0 4px;
+}
+
 .footer-links {
     margin-top: 15px;
 }
@@ -686,6 +756,27 @@ section {
     box-shadow: 0 5px 15px rgba(123, 44, 191, 0.3);
     opacity: 0;
     visibility: hidden;
+}
+
+/* ===== ANIMAÇÕES DE ENTRADA AO SCROLL ===== */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stat-card.revealed:hover,
+.projeto-card.revealed:hover {
+    transform: translateY(-10px);
+}
+
+.skill-category.revealed:hover {
+    transform: translateY(-5px);
 }
 
 /* ===== RESPONSIVIDADE ===== */
@@ -727,9 +818,20 @@ section {
         padding: 60px 0;
     }
 
-    /* Header / Nav */
     .hamburger {
         display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 
     .navbar {
